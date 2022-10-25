@@ -3,11 +3,12 @@
     "description": "Use columns in block fields based on the layout field.",
     "type": "kirby-plugin",
     "license": "MIT",
+    "version": "1.0.0",
     "authors": [{
         "name": "Roman Gsponer",
         "email": "mail@microman.ch"
     }],
     "require": {
-        "getkirby/composer-installer": "^1.0"
+        "getkirby/composer-installer": "^1.2"
     }
 }
