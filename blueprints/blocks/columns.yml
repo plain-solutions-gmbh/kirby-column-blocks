@@ -1,0 +1,17 @@
+name: 
+  en: Columns
+  de: Spalten
+icon: columns
+wysiwyg: true
+
+fields:
+  layout:
+    type: layout
+    layouts:
+      - "1/1"
+      - "1/2, 1/2"
+      - "1/4, 1/4, 1/4, 1/4"
+      - "1/3, 2/3"
+      - "2/3, 1/3"
+      - "1/3, 1/3, 1/3"
+  

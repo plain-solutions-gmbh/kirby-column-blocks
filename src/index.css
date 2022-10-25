@@ -1,0 +1,13 @@
+.k-layout-field.k-field.k-field-name-grid .k-field-header {
+  display: block;
+}
+
+.k-block-container[data-last-in-batch] .k-block-options, 
+.k-block-container[data-selected] .k-block-options {
+  display: none;
+}
+
+.k-block-container[data-last-in-batch] > .k-block-options, 
+.k-block-container[data-selected] > .k-block-options {
+  display: flex;
+}
