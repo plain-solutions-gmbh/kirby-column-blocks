@@ -35,7 +35,7 @@ fields:
     fieldsets:
       - heading
       - text
-      - column
+      - columns
 ```
 
 For the output see the [block documentation](https://getkirby.com/docs/reference/panel/fields/blocks#blocks-in-your-templates)
