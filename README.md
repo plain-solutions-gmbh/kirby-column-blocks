@@ -73,5 +73,5 @@ Copy `columns.yml` from `site/plugins/column-block/blueprints/blocks/`to `site/b
 
 **Customize the output**
 
-Copy `column.php` from `site/plugins/column-block/snippets/blocks` to `site/snippets/blocks` and edit it.
+Copy `columns.php` from `site/plugins/column-block/snippets/blocks` to `site/snippets/blocks` and edit it.
 
