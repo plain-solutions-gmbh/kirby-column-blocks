@@ -42,6 +42,8 @@ For the output see the [block documentation](https://getkirby.com/docs/reference
 
 ## Customization
 
+*Customize column block for a single block field*
+
 Just extend the column block like this:
 
 ```yml
@@ -65,4 +67,11 @@ fields:
               - text
 ```
 
-To customize the ouput copy `column.php` from `site/plugins/column-block/snippets/blocks` to `site/snippets/blocks` and edit it.
+*Customize column block globally*
+
+Copy `columns.yml` from `site/plugins/column-block/blueprints/blocks/`to `site/blueprints/blocks/` and edit it.
+
+*Customize the output*
+
+Copy `column.php` from `site/plugins/column-block/snippets/blocks` to `site/snippets/blocks` and edit it.
+
