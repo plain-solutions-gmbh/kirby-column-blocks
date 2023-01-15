@@ -4,16 +4,14 @@
 
   <section class="grid" id="<?= $layout->id() ?>">
 
-    <?php foreach ($layout->columns() as $column): ?>
+  <?php foreach ($layout->columns() as $column): ?>
 
-      <div class="column" style="--columns:<?= $column->span() ?>">
-        <div class="blocks">
-          <?= $column->blocks() ?>
-        </div>
+    <div class="column" style="--columns:<?= $column->span() ?>">
+      <div class="blocks">
+        <?= $column->blocks() ?>
       </div>
-      
-    <?php endforeach ?>
+    </div>
+    
+  <?php endforeach ?>
 
-  </section>
-
-</div>
+</section>
