@@ -2,16 +2,24 @@
 
 <?php $layout = $block->layout()->toLayouts()->first() ?>
 
+<?php if ($layout !== null): ?>
+
   <section class="grid" id="<?= $layout->id() ?>">
 
-  <?php foreach ($layout->columns() as $column): ?>
+    <?php foreach ($layout->columns() as $column): ?>
 
-    <div class="column" style="--columns:<?= $column->span() ?>">
-      <div class="blocks">
-        <?= $column->blocks() ?>
+      <div class="column" style="--columns:<?= $column->span() ?>">
+
+        <div class="blocks">
+
+          <?= $column->blocks() ?>
+
+        </div>
+        
       </div>
-    </div>
-    
-  <?php endforeach ?>
+      
+    <?php endforeach ?>
 
-</section>
+  </section>
+
+<?php endif ?>

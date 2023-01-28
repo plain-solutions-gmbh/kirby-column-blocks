@@ -3,7 +3,7 @@
     "description": "Use columns in block fields based on the layout field.",
     "type": "kirby-plugin",
     "license": "MIT",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "authors": [{
         "name": "Roman Gsponer",
         "email": "mail@microman.ch"
