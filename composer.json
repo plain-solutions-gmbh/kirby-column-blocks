@@ -10,5 +10,9 @@
     }],
     "require": {
         "getkirby/composer-installer": "^1.2"
-    }
+    },
+    "funding": [{
+        "type": "other",
+        "url": "https://www.paypal.com/donate/?hosted_button_id=ZMV4BV3X7EUT4"
+    }]
 }

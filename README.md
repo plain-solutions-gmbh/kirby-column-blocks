@@ -13,18 +13,18 @@ Features:
 
 ![Grid block](./.github/screenshot-column-block.png)
 
-> This plugin is free to use and published under the MIT license. If you use this plugin for commercial purposes or you want to show your appreciation [support me with a donation](https://www.paypal.com/donate?hosted_button_id=LBCLZVHS4K2R6).
+
+> This plugin is free to use and published under the MIT license. If you use this plugin for commercial purposes, or you want to show your appreciation. [support me with a donation](https://www.paypal.com/donate/?hosted_button_id=ZMV4BV3X7EUT4).
 
 ## Installation
 
 **Manually**
 
-Download and copy of this repository to your plugin folder: `/site/plugins/`
+[Download](https://github.com/youngcut/kirby-column-blocks) and copy the plugin into your plugin folder: `/site/plugins/`
 
-**Composer**
+**With Composer**
 
 `composer require microman/kirby-column-blocks`
-
 
 ## Simple use
 
@@ -77,3 +77,9 @@ Copy `columns.php` from `site/plugins/column-block/snippets/blocks` to `site/sni
 
 
 Need help? See [this post](https://forum.getkirby.com/t/plug-in-column-block/27056) from the Kirby forum.
+
+## License
+
+MIT
+
+> Do you like this Plugin? [Buy me a ☕️](https://www.paypal.com/donate/?hosted_button_id=ZMV4BV3X7EUT4)
