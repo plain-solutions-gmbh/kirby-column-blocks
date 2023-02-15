@@ -76,7 +76,7 @@ Copy `columns.yml` from `site/plugins/column-block/blueprints/blocks/`to `site/b
 Copy `columns.php` from `site/plugins/column-block/snippets/blocks` to `site/snippets/blocks` and edit it.
 
 
-Need help? See [this post](https://forum.getkirby.com/t/plug-in-column-block/27056) from the Kirby forum.
+Need help? See [this post](https://forum.getkirby.com/t/column-block-plugin/26828) from the Kirby forum.
 
 ## License
 
