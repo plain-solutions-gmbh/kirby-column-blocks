@@ -20,7 +20,7 @@ Features:
 
 **Manually**
 
-[Download](https://github.com/youngcut/kirby-column-blocks) and copy the plugin into your plugin folder: `/site/plugins/`
+[Download](https://github.com/plain-solutions-gmbh/kirby-column-blocks) and copy the plugin into your plugin folder: `/site/plugins/`
 
 **With Composer**
 
