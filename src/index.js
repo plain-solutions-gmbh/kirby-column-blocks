@@ -1,9 +1,9 @@
-import Columns from "./components/Columns.vue";
+import ColumnsBlock from "./components/ColumnsBlock.vue";
 import "./index.css";
 
 window.panel.plugin("microman/column-block", {
   blocks: {
-    columns: Columns,
+    columns: ColumnsBlock,
   },
   icons: {
     columns:

@@ -5,7 +5,7 @@
         <div
           v-for="(col, colIndex) in columns"
           :key="colIndex"
-          :data-width="col.width"
+          :style="'--width:' + col.width"
           class="k-column"
         >
           <k-blocks-field
