@@ -23,31 +23,6 @@
         {{ empty || $t("field.layout.empty") }}
       </k-empty>
     </template>
-
-    <k-dialog
-      ref="selector"
-      :cancel-button="false"
-      :submit-button="false"
-      size="small"
-      class="k-layout-selector"
-    >
-      <k-headline>{{ $t("field.layout.select") }}</k-headline>
-      <ul>
-        <li
-          v-for="(layoutOption, layoutOptionIndex) in layouts.layouts"
-          :key="layoutOptionIndex"
-          class="k-layout-selector-option"
-        >
-          <k-grid @click.native="assingLayout(layoutOption)">
-            <k-column
-              v-for="(column, columnIndex) in layoutOption"
-              :key="columnIndex"
-              :width="column"
-            />
-          </k-grid>
-        </li>
-      </ul>
-    </k-dialog>
   </div>
 </template>
 
@@ -75,23 +50,39 @@ export default {
           columns: columns,
         })
       );
-      this.$refs.selector.close();
+      this.$emit("update");
     },
     selectLayout() {
-      this.$refs.selector.open();
+      this.$panel.dialog.open({
+        component: "k-layout-selector",
+        props: {
+          label: this.$t("field.layout.change"),
+          layouts: this.layouts.layouts,
+          selector: this.selector,
+        },
+        on: {
+          submit: (value) => {
+            this.assingLayout(value);
+            this.$panel.dialog.close();
+          },
+        },
+      });
     },
   },
 };
 </script>
 
 <style>
+.k-block-type-columns > .k-block-type-column > .k-grid {
+  gap: var(--spacing-4);
+}
+
 .k-block-type-columns .k-field-header > label {
-  padding-bottom: 0;
   font-size: 0.8em;
   color: var(--color-text-light);
 }
 
-.k-block-type-columns .k-field-header > .k-dropdown > button > span {
+.k-block-type-columns .k-field-header > .k-button-group > button > span {
   --size: 1em;
   color: var(--color-text-light);
 }
