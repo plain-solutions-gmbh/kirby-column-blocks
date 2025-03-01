@@ -4,9 +4,5 @@
 # npm modules
 /node_modules
 
-#Symbolic Links
-*.lnk
-*.symlink
-
 # Composer files
 /vendor
