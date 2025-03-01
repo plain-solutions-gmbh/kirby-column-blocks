@@ -1,10 +1,7 @@
 <?php
 
-Kirby::plugin('microman/column-block', [
-    'blueprints' => [
-        'blocks/columns' => __DIR__ . '/blueprints/blocks/columns.yml'
-    ],
-    'snippets' => [
-        'blocks/columns' => __DIR__ . '/snippets/blocks/columns.php'
-    ]
-]);
+@include_once __DIR__ . '/utils/Plugin.php';
+
+use Plain\Helpers\Plugin;
+
+Plugin::load('plain/column-block', autoloader: ['blueprints', 'snippets']);

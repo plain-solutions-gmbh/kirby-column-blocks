@@ -13,9 +13,6 @@ Features:
 
 ![Grid block](./.github/screenshot-column-block.png)
 
-
-> This plugin is free to use and published under the MIT license. If you use this plugin for commercial purposes, or you want to show your appreciation. [support me with a donation](https://www.paypal.com/donate/?hosted_button_id=ZMV4BV3X7EUT4).
-
 ## Installation
 
 **Manually**
@@ -24,7 +21,7 @@ Features:
 
 **With Composer**
 
-`composer require microman/kirby-column-blocks`
+`composer require getplain/kirby-column-blocks`
 
 ## Simple use
 
@@ -80,6 +77,4 @@ Need help? See [this post](https://forum.getkirby.com/t/column-block-plugin/2682
 
 ## License
 
-MIT
-
-> Do you like this Plugin? [Buy me a ☕️](https://www.paypal.com/donate/?hosted_button_id=ZMV4BV3X7EUT4)
+This plugin is free to use and is published under the MIT license. If you use this plugin for commercial purposes or wish to show your appreciation, [support me with a donation](https://www.paypal.com/donate/?hosted_button_id=ZMV4BV3X7EUT4).
