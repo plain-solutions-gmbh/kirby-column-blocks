@@ -21,7 +21,7 @@ Features:
 
 **With Composer**
 
-`composer require getplain/kirby-column-blocks`
+`composer require plain/kirby-column-blocks`
 
 ## Simple use
 

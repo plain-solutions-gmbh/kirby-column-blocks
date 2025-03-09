@@ -1,6 +1,8 @@
 <?php 
-if (!class_exists('Plain\Helpers\Plugin')) {
-    require_once __DIR__ . '/Plugin.php';
-    require_once __DIR__ . '/Autoloader.php';
-    require_once __DIR__ . '/License.php';
-}
+use Kirby\Filesystem\F;
+
+F::loadClasses([
+    'Plain\Helpers\Plugin'      => __DIR__ . '/Plugin.php',
+    'Plain\Helpers\Autoloader'  => __DIR__ . '/Autoloader.php',
+    'Plain\Helpers\License'     => __DIR__ . '/License.php'
+]);
