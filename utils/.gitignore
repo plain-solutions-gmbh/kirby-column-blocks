@@ -1,0 +1,13 @@
+# OS files
+.DS_Store
+
+# npm modules
+/node_modules
+
+
+#Symbolic Links
+*.lnk
+*.symlink
+
+# migration file
+/migrated
