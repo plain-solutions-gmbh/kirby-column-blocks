@@ -130,7 +130,7 @@ class License
         }
 
         $prefix = $this->prefix;
-        $lang = App::instance()->user()?->language() ?? App::instance()->currentLanguage()->code();
+        $lang = App::instance()->user()?->language() ?? App::instance()->panelLanguage();
 
         return A::merge($extends, [
             'api' => [
