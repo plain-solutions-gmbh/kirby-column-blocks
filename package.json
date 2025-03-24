@@ -5,7 +5,8 @@
     "build": "kirbyup src/index.js",
     "lint": "eslint \"src/**/*.{js,vue}\"",
     "lint:fix": "npm run lint -- --fix",
-    "format": "prettier --write \"src/**/*.{js,vue}\""
+    "format": "prettier --write \"src/**/*.{js,vue}\"",
+    "utils": "git subtree pull --prefix=utils https://github.com/plain-solutions-gmbh/utils main --squash -m 'Update utils subtree'"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
