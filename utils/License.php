@@ -72,6 +72,10 @@ class License
         return new self($name, $info);
     }
 
+    private function saveTranslate($key) {
+        return App::instance()->translation()->get($key);
+    }
+
     public function getLicenseObject(string $locale = null): ?array
     {
         if (static::isValid()) {
@@ -79,7 +83,7 @@ class License
         }
         return [
             'title'     => $this->title,
-            'cta'       => 'license.activate.label',
+            'cta'       => $this->saveTranslate('license.activate.label'),
             'dialog'    => $this->prefix . "/register"
         ];
     }
@@ -93,7 +97,7 @@ class License
         return [
             'value'     => 'missing',
             'theme'     => 'negative',
-            'label'     => App::instance()->translation()->get('license.unregistered.label'),
+            'label'     => $this->saveTranslate('license.unregistered.label'),
             'icon'      => 'alert',
             'dialog'    => "{$this->prefix}/register"
         ];
@@ -102,7 +106,7 @@ class License
     private function isValid(): bool
     {
 
-        if ($this->isValid !== null){
+        if ($this->isValid !== null) {
             return $this->isValid;
         }
 
@@ -130,7 +134,7 @@ class License
         }
 
         $prefix = $this->prefix;
-        $lang = App::instance()->user()?->language() ?? App::instance()->panelLanguage();
+        $lang = App::instance()->user()?->language() ?? App::instance()->currentLanguage()?->code() ?? 'en';;
 
         return A::merge($extends, [
             'api' => [
@@ -138,7 +142,7 @@ class License
                     [
                         "pattern" => "plain/licenses/validate",
                         "action" => function () {
-                            return License::factory(get('name'))->register(get("key"), get("email"));
+                            //return License::factory(get('name'))->register(get("key"), get("email"));
                         },
                     ],
                 ]
@@ -181,25 +185,25 @@ class License
                                 'type'  => 'headline'
                             ],
                             'domain' => [
-                                'label' => I18n::translate('license.activate.label'),
+                                'label' => $this->saveTranslate('license.activate.label'),
                                 'type'  => 'info',
                                 'theme' => $local ? 'warning' : 'info',
                                 'text'  => Str::replace($text, 'Kirby', $license_obj->title)
                             ],
                             'license' => [
-                                'label'       => I18n::translate('license.code.label'),
+                                'label'       => $this->saveTranslate('license.code.label'),
                                 'type'        => 'text',
                                 'required'    => true,
                                 'counter'     => false,
                                 'placeholder' => '',
-                                'help'        => I18n::translate('license.code.help') . ' ' . '<a href="' . $license_obj->link . '" target="_blank">' . I18n::translate('license.buy') . ' &rarr;</a>'
+                                'help'        => $this->saveTranslate('license.code.help') . ' ' . '<a href="' . $license_obj->link . '" target="_blank">' . $this->saveTranslate('license.buy') . ' &rarr;</a>'
                             ],
                             'email' => Field::email(['required' => true]),
                             'license_id' => Field::hidden()
                         ],
                         'submitButton' => [
                             'icon'  => 'key',
-                            'text'  => I18n::translate('activate'),
+                            'text'  => $this->saveTranslate('activate'),
                             'theme' => 'love',
                         ],
                         'value' => [
@@ -220,7 +224,7 @@ class License
                 );
 
                 return [
-                    'message' => I18n::translate('license.success')
+                    'message' => $this->saveTranslate('license.success')
                 ];
                 
             }
