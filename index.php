@@ -4,4 +4,4 @@
 
 use Plain\Helpers\Plugin;
 
-Plugin::load('plain/column-block', autoloader: ['blueprints', 'snippets']);
+Plugin::load('plain/column-block', autoloader: true);
