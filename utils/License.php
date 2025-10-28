@@ -73,10 +73,10 @@ class License
     }
 
     public function saveTranslate($key) {
-        return App::instance()->translation()->get($key);
+        return App::instance()->translation()->get($key) ?? App::instance()->translation('en')->get($key);
     }
 
-    public function getLicenseObject(string $locale = null): ?array
+    public function getLicenseObject(): ?array
     {
         if (static::isValid()) {
             return null;
@@ -156,7 +156,7 @@ class License
             ],
             'translations' => [
                 $lang => [
-                    "plain.licenses.$prefix" => $this->getLicenseObject($lang)
+                    "plain.licenses.$prefix" => $this->getLicenseObject()
                 ]
             ],
         ]);
