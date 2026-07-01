@@ -1,7 +1,12 @@
 <?php
 
-@include_once __DIR__ . '/utils/load.php';
+use Kirby\Cms\App;
 
-use Plain\Helpers\Plugin;
-
-Plugin::load('plain/column-block', autoloader: true);
+App::plugin('plain/column-block', [
+    'blueprints' => [
+        'blocks/columns' => __DIR__ . '/blueprints/blocks/columns.yml',
+    ],
+    'snippets' => [
+        'blocks/columns' => __DIR__ . '/snippets/blocks/columns.php',
+    ],
+]);
