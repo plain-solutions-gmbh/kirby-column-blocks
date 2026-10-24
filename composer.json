@@ -3,7 +3,7 @@
     "description": "Use columns in block fields based on the layout field.",
     "type": "kirby-plugin",
     "license": "MIT",
-	"homepage": "https://plain-solutions.net/801524",
+	"homepage": "https://github.com/plain-solutions-gmbh/",
     "version": "1.2.8",
 	"authors": [
 		{
@@ -16,11 +16,5 @@
 	},
 	"extra": {
 		"title": "Column Block"
-	},
-	"funding": [
-		{
-			"type": "PayPal",
-			"url": "https://www.paypal.com/donate/?hosted_button_id=ZMV4BV3X7EUT4"
-		}
-	]
+	}
 }
