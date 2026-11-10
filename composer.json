@@ -4,7 +4,7 @@
     "type": "kirby-plugin",
     "license": "MIT",
 	"homepage": "https://github.com/plain-solutions-gmbh/",
-    "version": "1.2.9",
+    "version": "2.0.0-beta.1",
 	"authors": [
 		{
 			"name": "Roman Gsponer",
@@ -15,6 +15,9 @@
 		"getkirby/composer-installer": "^1.1"
 	},
 	"extra": {
-		"title": "Column Block"
+		"title": "Column Block",
+		"kirby": {
+			"compatible": "^6.0"
+		}
 	}
 }

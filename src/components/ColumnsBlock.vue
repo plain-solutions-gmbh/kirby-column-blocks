@@ -9,19 +9,22 @@
           class="k-column"
         >
           <k-blocks-field
-            :value="col.blocks"
             v-bind="layouts"
+            :value="col.blocks"
             :label="col.width"
-            @input="$emit('update', $event)"
+            @input="onColumnInput(colIndex, $event)"
           />
         </div>
       </div>
     </template>
 
     <template v-else>
-      <k-empty icon="dashboard" class="k-layout-empty" @click="selectLayout(0)">
-        {{ empty || $t("field.layout.empty") }}
-      </k-empty>
+      <k-empty
+        icon="dashboard"
+        class="k-layout-empty"
+        :text="layouts?.empty || $t('field.layout.empty')"
+        @click="selectLayout"
+      />
     </template>
   </div>
 </template>
@@ -32,25 +35,36 @@ export default {
     layouts() {
       return this.field("layout");
     },
-    columns() {
-      return this.content.layout.length ? this.content.layout[0].columns : [];
+    rows() {
+      return this.content.layout ?? [];
     },
-  },
-  watch: {
     columns() {
-      if (this.content.layout.length > 1) {
-        this.content.layout.splice(1);
-      }
+      return this.rows[0]?.columns ?? [];
     },
   },
   methods: {
-    async assingLayout(columns) {
-      this.content.layout.push(
-        await this.$api.post(this.layouts.endpoints.field + "/layout", {
-          columns: columns,
-        })
+    async assignLayout(columns) {
+      const row = await this.$panel.api.post(
+        this.layouts.endpoints.field + "/layout",
+        { columns }
       );
-      this.$emit("update");
+
+      // the column block only holds a single layout row
+      this.update({ layout: [row] });
+    },
+    onColumnInput(colIndex, blocks) {
+      const row = this.rows[0];
+
+      this.update({
+        layout: [
+          {
+            ...row,
+            columns: row.columns.map((column, index) =>
+              index === colIndex ? { ...column, blocks } : column
+            ),
+          },
+        ],
+      });
     },
     selectLayout() {
       this.$panel.dialog.open({
@@ -58,11 +72,12 @@ export default {
         props: {
           label: this.$t("field.layout.change"),
           layouts: this.layouts.layouts,
-          selector: this.selector,
+          selector: this.layouts.selector,
+          value: null,
         },
         on: {
           submit: (value) => {
-            this.assingLayout(value);
+            this.assignLayout(value);
             this.$panel.dialog.close();
           },
         },

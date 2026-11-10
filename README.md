@@ -13,6 +13,15 @@ Features:
 
 ![Grid block](./.github/screenshot-column-block.png)
 
+## Compatibility
+
+| Kirby | Plugin version | Branch |
+|-------|----------------|--------|
+| 6     | 2.x | [`kirby-6`](https://github.com/plain-solutions-gmbh/kirby-column-blocks/tree/kirby-6) |
+| 4 / 5 | 1.x | [`main`](https://github.com/plain-solutions-gmbh/kirby-column-blocks/tree/main) |
+
+Composer installs the matching version automatically. For a manual installation, download the branch that fits your Kirby version.
+
 ## Installation
 
 **Manually**
